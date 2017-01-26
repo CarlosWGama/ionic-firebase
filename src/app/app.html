@@ -1,1 +1,25 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!-- MENU -->
+<ion-menu [content]="content">
+  <!-- HEADER -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>carloswgama@gmail.com</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- BOTÕES -->
+  <ion-content>
+    <ion-list>
+        <button ion-item (click)="menuTrocaPage(loginPage)">
+             Login
+        </button>
+      
+        <button ion-item (click)="menuLogout()">
+            Logout
+        </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- CONTEUDO PRINCIPAL -->
+<ion-nav #content [root]="rootPage"></ion-nav>

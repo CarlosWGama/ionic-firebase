@@ -14,3 +14,16 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+/**************** BACKGROUND ***************/
+$BACKGROUND_TOP: #fe9456;
+$BACKGROUND_BOTTOM: #dd49e3;
+$BACKGROUND_TRANSPARENCY: rgba(255,255,255,0.4);
+
+
+ion-content {
+    background: -webkit-gradient(left top, $BACKGROUND_TOP, $BACKGROUND_BOTTOM);
+    background: -o-linear-gradient(bottom right, $BACKGROUND_TOP, $BACKGROUND_BOTTOM);
+    background: -moz-linear-gradient(bottom right, $BACKGROUND_TOP, $BACKGROUND_BOTTOM);
+    background: linear-gradient(to bottom right, $BACKGROUND_TOP, $BACKGROUND_BOTTOM);
+}

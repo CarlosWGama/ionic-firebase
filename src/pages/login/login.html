@@ -1,0 +1,30 @@
+<ion-content padding>
+
+  <!-- LOGO -->
+  <img src="assets/images/logo.png" class="logo"/>
+
+  <!-- LOGIN -->
+  <ion-item>
+    <ion-label floating>Login</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <!-- SENHA -->
+  <ion-item>
+    <ion-label floating>Senha</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <!-- BOTÕES CADASTRO -->
+  <div *ngIf="cadastrar">
+    <button ion-button color="light" outline block>Cadastrar</button><br/>
+    <button ion-button color="header" block outline (click)="alterarBotoes(false)">Já é cadastrado?</button>
+  </div>
+
+  <!-- BOTÕES LOGIN -->
+  <div *ngIf="!cadastrar">
+    <button ion-button color="light" outline block>Logar</button><br/>
+    <button ion-button color="header" block outline (click)="alterarBotoes(true)">Realizar cadastro</button>
+  </div>
+
+</ion-content>

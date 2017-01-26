@@ -1,0 +1,17 @@
+page-login {
+    img.logo {
+        max-width: 50%;
+        max-height: 33%;
+        margin-top: 10%;
+        margin-left: 25%;
+    }
+
+    ion-label {
+        color: white !important;
+        text-align: center;
+    } 
+
+    .input-has-focus ion-label {
+        text-align: justify;
+    }
+}

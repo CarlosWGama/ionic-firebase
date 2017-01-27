@@ -2,12 +2,12 @@ import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavOptions, MenuController } from 'ionic-angular';
 
-/*
-  Generated class for the Login page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+/**
+ * @package Pages
+ * @author Carlos W. Gama
+ * @since 0.0.1
+ * Página do Login
+ */
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'

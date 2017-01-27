@@ -1,3 +1,4 @@
+import { MinhasPerguntasPage } from './../pages/minhas-perguntas/minhas-perguntas';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, NavController, NavOptions } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
@@ -11,7 +12,7 @@ import { HomePage } from './../pages/home/home';
 export class MyApp {
   rootPage = LoginPage;
   pages: { page: any, titulo: string, icon: string }[] = [
-    { page: HomePage, titulo: "Minhas Perguntas", icon: "help"},
+    { page: MinhasPerguntasPage, titulo: "Minhas Perguntas", icon: "help"},
     { page: HomePage, titulo: "Meus conselhos", icon: "ios-heart-outline"},
     { page: HomePage, titulo: "Discuta", icon: "ios-megaphone-outline"},
   ];

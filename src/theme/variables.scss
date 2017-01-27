@@ -13,6 +13,7 @@ $font-path: "../assets/fonts";
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 $background-color: rgba(1, 1, 1, 0);
+$text-color: #fff;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -22,14 +23,17 @@ $background-color: rgba(1, 1, 1, 0);
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+$header-color: #6fd0d9;
+$subheader-color: #ec8731;
+
 $colors: (
   primary:    #387ef5,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  header:     #6fd0d9,
-  subheader:  #ec8731
+  header:     $header-color,
+  subheader:  $subheader-color
 );
 
 

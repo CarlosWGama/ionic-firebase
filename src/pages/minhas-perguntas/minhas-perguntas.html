@@ -1,0 +1,37 @@
+<!-- HEADER -->
+<ion-header>
+
+  <ion-navbar color="header">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Minhas Perguntas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- CONTEUDO -->
+<ion-content>
+  
+  <!-- LISTA DE DISCUSSÕES -->
+  <ion-list>
+    
+      <button ion-item *ngFor="let discussao of discussoes | async">
+        <h2 item-left>{{ discussao.Criador.Nome }}</h2>
+        <h3>{{ discussao.Titulo }}</h3>
+        <p>{{ discussao.Descricao }}</p>
+      </button>
+    
+  </ion-list>
+
+  <!-- AÇÔES -->
+  <ion-fab bottom right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <!-- PERGUNTA -->
+      <button ion-fab>
+          <ion-icon name="help"></ion-icon><div>Pergunta</div>
+      </button>
+
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

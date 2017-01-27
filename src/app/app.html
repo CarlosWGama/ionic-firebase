@@ -10,12 +10,12 @@
   <!-- BOTÕES -->
   <ion-content>
     <ion-list>
-        <button ion-item (click)="menuTrocaPage(loginPage)">
-             Login
+        <button ion-item *ngFor="let p of pages" (click)="menuTrocaPage(p.page)" menuToggle>
+             <ion-icon name="{{ p.icon }}"></ion-icon> {{ p.titulo }}
         </button>
       
         <button ion-item (click)="menuLogout()">
-            Logout
+            <ion-icon name="log-out"></ion-icon> Logout
         </button>
     </ion-list>
   </ion-content>

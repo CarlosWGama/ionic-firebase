@@ -27,3 +27,22 @@ ion-content {
     background: -moz-linear-gradient(bottom right, $BACKGROUND_TOP, $BACKGROUND_BOTTOM);
     background: linear-gradient(to bottom right, $BACKGROUND_TOP, $BACKGROUND_BOTTOM);
 }
+
+
+/**************** MENU **********************/
+$MENU_TOP: #f52549;
+$MENU_BOTTOM: #fa6775;
+
+ion-menu {
+
+    ion-content {
+        background: -webkit-gradient(left top, $MENU_TOP, $MENU_BOTTOM);
+        background: -o-linear-gradient(bottom right, $MENU_TOP, $MENU_BOTTOM);
+        background: -moz-linear-gradient(bottom right, $MENU_TOP, $MENU_BOTTOM);
+        background: linear-gradient(to bottom right, $MENU_TOP, $MENU_BOTTOM);
+    }
+
+    button {
+        color: white !important;
+    }
+}

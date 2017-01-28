@@ -48,12 +48,21 @@ ion-menu {
 }
 
 /*************** FABS ***********************/
+.fab {
+  contain: initial;
+}
+
 ion-fab {
+
+    button {
+        box-shadow: 0 4px 10px #6b6b6b;
+    }
+
     ion-fab-list button[ion-fab] {
         text-align: center;
         overflow: visible;
 
-        div {
+        div.label {
           position: absolute;
           right: 48px;
           background: rgba(248, 248, 248, 1);

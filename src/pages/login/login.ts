@@ -15,7 +15,7 @@ import { NavController, NavOptions, MenuController } from 'ionic-angular';
 export class LoginPage {
 
   cadastrar: boolean = true;
-  private navOptions: NavOptions = { animate: true, animation: 'md-transition', direction: 'forward' }
+  private navOptions: NavOptions = {animate: true, animation: 'wp-transition', direction: 'forward', duration: 2000}
 
   constructor(public navCtrl: NavController, public menuCtrl: MenuController) {}
 
@@ -35,7 +35,7 @@ export class LoginPage {
    */
   cadastro() {
     this.menuCtrl.enable(true);
-    this.navCtrl.setRoot(HomePage, this.navOptions);
+    this.navCtrl.setRoot(HomePage, null, this.navOptions);
   }
 
   /**
@@ -43,7 +43,7 @@ export class LoginPage {
    */
   login() {
     this.menuCtrl.enable(true);
-    this.navCtrl.setRoot(HomePage, this.navOptions);
+    this.navCtrl.setRoot(HomePage, null, this.navOptions);
   }
 
 }

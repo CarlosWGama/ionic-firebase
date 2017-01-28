@@ -35,7 +35,7 @@ export class MyApp {
    * Troca entre as diferentes páginas
    */
   menuTrocaPage(page: any) {
-    this.navCtrl.setRoot(page, null, this.navOptions)
+    this.navCtrl.setRoot(page)
   }
 
   /**

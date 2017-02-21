@@ -1,18 +1,30 @@
 <ion-content padding>
 
   <!-- LOGO -->
-  <img src="assets/images/logo.png" class="logo"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-25 width-50>	
+        <img src="assets/images/logo.png" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- LOGIN -->
+  <ion-item *ngIf="cadastrar">
+    <ion-label floating>Nome Fantasia</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.nome"></ion-input>
+  </ion-item>
 
   <!-- LOGIN -->
   <ion-item>
     <ion-label floating>Login</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
   </ion-item>
 
   <!-- SENHA -->
   <ion-item>
     <ion-label floating>Senha</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
   </ion-item>
 
   <!-- BOTÕES CADASTRO -->

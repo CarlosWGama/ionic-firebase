@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Adicionar nova pergunta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- CONTEUDO -->
+<ion-content>
+
+  <form #formNovaPergunta="ngForm">
+    <ion-list>
+
+      <ion-toolbar color="header" text-center>
+        <ion-icon name="md-bulb" class="icon-bulb"></ion-icon>
+        <h2> Precisando de ajuda? </h2>
+        <p>Crie uma nova pergunta para que outros usuários possam te ajudar com conselhos</p>
+      </ion-toolbar>
+
+      <!-- TITULO -->
+      <ion-item>
+        <ion-label fixed>Título</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="titulo" name="titulo" required></ion-input>
+      </ion-item>
+      <!-- TITULO [FIM] -->
+
+      <!-- MENSAGEM -->
+      <ion-item>
+        <ion-label floating>Mensagem Inicial</ion-label>
+        <ion-textarea rows="10" [(ngModel)]="mensagem" name="mensagem" required></ion-textarea>
+      </ion-item>
+      <!-- MENSAGEM -->
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color="header">
+      <button ion-button color="light" clear full class="btn-criar" [disabled]="!formNovaPergunta.form.valid">CRIAR</button>
+    </ion-toolbar>
+</ion-footer>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 
+import { NovaPerguntaPage } from './../nova-pergunta/nova-pergunta';
 import { Discussao } from './../../models/discussao';
 import { Discussoes } from './../../providers/discussoes';
 
@@ -34,6 +35,11 @@ export class MinhasPerguntasPage {
     this.discussoes.then(() => {
       loading.dismiss();
     });
+  }
+
+  /** Leva para page de Nova Pergunt */
+  public novaPergunta() {
+    this.navCtrl.push(NovaPerguntaPage);
   }
 
 }

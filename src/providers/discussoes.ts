@@ -27,9 +27,9 @@ export class Discussoes {
 
       setTimeout(() =>{
           resolve([
-          new Discussao('qeqweqw', 'Não sei o que fazer mais', usuario, new Date("2017-01-26T00:00:00")),
-          new Discussao('qeqweqw', 'Help!!', usuario2, new Date("2017-01-26T00:00:00")),
-          new Discussao('qeqweqw', 'Preciso de ajuda', usuario3, new Date("2017-01-26T00:00:00"))
+          new Discussao('qeqweqw', usuario, 'Não sei o que fazer mais', new Date("2017-01-26T00:00:00")),
+          new Discussao('qeqweqw', usuario2, 'Help!!', new Date("2017-01-26T00:00:00")),
+          new Discussao('qeqweqw', usuario3, 'Preciso de ajuda', new Date("2017-01-26T00:00:00"))
         ]);
       }, 2000);
       

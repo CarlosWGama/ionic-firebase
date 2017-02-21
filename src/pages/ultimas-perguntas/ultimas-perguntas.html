@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar color="header">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>Ultimas Perguntas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+
+    <!-- AÇÔES -->
+    <ion-fab bottom right >
+      <button ion-fab mini color="header"><ion-icon name="add"></ion-icon></button>
+      <ion-fab-list side="top">
+        <!-- PERGUNTA -->
+        <button ion-fab (click)="novaPergunta()">
+            <ion-icon name="help"></ion-icon><div class="label">Pergunta</div>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+
+</ion-content>

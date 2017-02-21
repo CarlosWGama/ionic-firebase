@@ -7,10 +7,9 @@
 
 export class Usuario {
 
-    constructor(private id, private nome) {
+    constructor(private id?: string, public email: string = "", public nome: string = "", public senha: string = "") {
 
     }
 
     get ID(): string { return this.id; }
-    get Nome(): string { return this.nome; }
 }

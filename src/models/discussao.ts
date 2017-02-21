@@ -8,7 +8,7 @@ import { Usuario } from './usuario';
 
 export class Discussao {
 
-    constructor(private id: string = "", private titulo: string, private criador: Usuario, private dataCriacao: Date) {
+    constructor(private id: string = "", private criador: Usuario, private titulo: string, private dataCriacao: Date) {
 
     }
 

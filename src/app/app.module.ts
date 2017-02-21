@@ -2,17 +2,23 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+//Pages
 import { LoginPage } from './../pages/login/login';
-import { HomePage } from './../pages/home/home';
 import { MinhasPerguntasPage } from './../pages/minhas-perguntas/minhas-perguntas';
+import { UltimasPerguntasPage } from './../pages/ultimas-perguntas/ultimas-perguntas';
+import { NovaPerguntaPage } from './../pages/nova-pergunta/nova-pergunta';
+
+//Providers
 import { Discussoes } from './../providers/discussoes';
+import { Usuarios } from './../providers/usuarios';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    HomePage,
-    MinhasPerguntasPage
+    MinhasPerguntasPage,
+    UltimasPerguntasPage,
+    NovaPerguntaPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,9 +27,10 @@ import { Discussoes } from './../providers/discussoes';
   entryComponents: [
     MyApp,
     LoginPage,
-    HomePage,
-    MinhasPerguntasPage
+    MinhasPerguntasPage,
+    UltimasPerguntasPage,
+    NovaPerguntaPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Discussoes]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Discussoes, Usuarios]
 })
 export class AppModule {}

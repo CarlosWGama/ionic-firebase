@@ -1,3 +1,8 @@
+import { DiscussaoPage } from './../discussao/discussao';
+import { Mensagem } from './../../models/mensagem';
+import { Usuarios } from './../../providers/usuarios';
+import { Discussoes } from './../../providers/discussoes';
+import { Discussao } from './../../models/discussao';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -16,10 +21,18 @@ export class NovaPerguntaPage {
   titulo: string = "";
   mensagem: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController,  private discussoes: Discussoes, private usuarios: Usuarios) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NovaPerguntaPage');
+  }
+
+  public criarPergunta() {
+    let usuario = this.usuarios.Usuario;
+    let discussao = new Discussao("", usuario, this.titulo);
+    let mensagem = new Mensagem("", "", usuario, this.mensagem);
+    discussao = this.discussoes.cadastrar(discussao, mensagem);
+    this.navCtrl.setRoot(DiscussaoPage, {discussao: discussao});
   }
 
 }

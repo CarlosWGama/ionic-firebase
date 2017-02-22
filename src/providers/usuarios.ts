@@ -26,7 +26,10 @@ export class Usuarios {
   /** Retorna usuário logado */
   get Usuario(): Usuario {
     if (this.auth.currentUser) {
-      return new Usuario(this.auth.currentUser.uid, this.auth.currentUser.email, this.auth.currentUser.displayName);
+      let usuario = new Usuario(this.auth.currentUser.uid, this.auth.currentUser.email, this.auth.currentUser.displayName);
+      usuario.senha = null; //Oculta
+      usuario.email = null; //Oculta
+      return usuario;
     } 
     return null;
   }

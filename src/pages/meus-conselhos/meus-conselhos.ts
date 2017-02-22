@@ -1,25 +1,24 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { NovaPerguntaPage } from './../nova-pergunta/nova-pergunta';
-import { Discussao } from './../../models/discussao';
-import { Discussoes } from './../../providers/discussoes';
-import { Usuarios } from './../../providers/usuarios';
 import { DiscussaoPage } from './../discussao/discussao';
-
+import { Usuarios } from './../../providers/usuarios';
+import { Discussoes } from './../../providers/discussoes';
+import { Discussao } from './../../models/discussao';
 /**
  * @package Pages
  * @author Carlos W. Gama
- * @since 0.0.1
- * Página com as perguntas criadas pelo usuário
+ * @since 0.0.2
+ * Página que lista as perguntas onde você conselhou
  */
 @Component({
-  selector: 'page-minhas-perguntas',
-  templateUrl: 'minhas-perguntas.html'
+  selector: 'page-meus-conselhos',
+  templateUrl: 'meus-conselhos.html'
 })
-export class MinhasPerguntasPage {
+export class MeusConselhosPage {
 
-  private discussoes: Promise<Discussao[]>;
+   private discussoes: Promise<Discussao[]> = null;
 
   constructor(public navCtrl: NavController, private discProvider: Discussoes, private loadCtrl: LoadingController, private usuarios: Usuarios) {}
 
@@ -32,8 +31,8 @@ export class MinhasPerguntasPage {
     });
     loading.present();
 
-    this.discussoes = this.discProvider.getMinhasPerguntas(this.usuarios.Usuario.ID);
-
+    this.discussoes = this.discProvider.getUltimasParticipacoes(this.usuarios.Usuario.ID);
+ 
     this.discussoes.then(() => {
       loading.dismiss();
     });

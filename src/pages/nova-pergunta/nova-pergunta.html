@@ -38,6 +38,6 @@
 
 <ion-footer>
     <ion-toolbar color="header">
-      <button ion-button color="light" clear full class="btn-criar" [disabled]="!formNovaPergunta.form.valid">CRIAR</button>
+      <button ion-button color="light" clear full class="btn-criar" (click)="criarPergunta()" [disabled]="!formNovaPergunta.form.valid">CRIAR</button>
     </ion-toolbar>
 </ion-footer>

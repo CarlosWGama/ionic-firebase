@@ -7,10 +7,13 @@ import { LoginPage } from './../pages/login/login';
 import { MinhasPerguntasPage } from './../pages/minhas-perguntas/minhas-perguntas';
 import { UltimasPerguntasPage } from './../pages/ultimas-perguntas/ultimas-perguntas';
 import { NovaPerguntaPage } from './../pages/nova-pergunta/nova-pergunta';
+import { DiscussaoPage } from './../pages/discussao/discussao';
+import { MeusConselhosPage } from './../pages/meus-conselhos/meus-conselhos';
 
 //Providers
 import { Discussoes } from './../providers/discussoes';
 import { Usuarios } from './../providers/usuarios';
+import { Mensagens } from './../providers/mensagens';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { Usuarios } from './../providers/usuarios';
     LoginPage,
     MinhasPerguntasPage,
     UltimasPerguntasPage,
-    NovaPerguntaPage
+    NovaPerguntaPage,
+    DiscussaoPage,
+    MeusConselhosPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,8 +34,10 @@ import { Usuarios } from './../providers/usuarios';
     LoginPage,
     MinhasPerguntasPage,
     UltimasPerguntasPage,
-    NovaPerguntaPage
+    NovaPerguntaPage,
+    DiscussaoPage,
+    MeusConselhosPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Discussoes, Usuarios]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Discussoes, Usuarios, Mensagens]
 })
 export class AppModule {}

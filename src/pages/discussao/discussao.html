@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="header">
+
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>{{ discussao.titulo }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content #content padding>
+ 
+    <div class="chatBubble" *ngFor="let mensagem of mensagens | async">
+      <!--<img class="profile-pic" [ngClass]="getLado(mensagem)" src="">-->
+      <div class="chat-bubble" [ngClass]="getLado(mensagem)"> 
+        <div class="message">{{ mensagem.Mensagem }}</div>
+        <div class="message-detail">
+            <span class="author-msg">{{ mensagem.Criador.nome }} </span>,
+            <span>{{ mensagem.DataCriacao }}</span>
+        </div>
+      </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="header">
+    <ion-grid>
+      <ion-row>
+        <!-- Mensagem -->
+        <ion-col width-90>
+          <ion-input type="text" [(ngModel)]="texto" placeholder="Mensagem"></ion-input>
+        </ion-col>
+
+        <!-- Botão -->
+        <ion-col width-10>
+          <button ion-button clear (click)="enviarMensagem()" color="light" [hidden]="!texto"><ion-icon name="send"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

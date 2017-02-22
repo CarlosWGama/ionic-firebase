@@ -13,13 +13,10 @@
   
   <!-- LISTA DE DISCUSSÕES -->
   <ion-list>
-    
-      <button ion-item *ngFor="let discussao of discussoes | async">
-        <h2 item-left>{{ discussao.Criador.Nome }}</h2>
+      <button ion-item *ngFor="let discussao of discussoes | async" (click)="abrirPergunta(discussao)">
+        <h2 item-left>{{ discussao.Criador.nome }}</h2>
         <h3>{{ discussao.Titulo }}</h3>
-        <p>{{ discussao.Descricao }}</p>
       </button>
-    
   </ion-list>
 
   <!-- AÇÔES -->

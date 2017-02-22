@@ -1,8 +1,5 @@
 import { Mensagem } from './../models/mensagem';
-import { Usuario } from './../models/usuario';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 import { Discussao } from './../models/discussao';
 

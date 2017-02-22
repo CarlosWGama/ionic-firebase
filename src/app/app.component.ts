@@ -29,7 +29,7 @@ export class MyApp {
   constructor(platform: Platform, public menuCtrl: MenuController, private usuarios: Usuarios) {
     platform.ready().then(() => {
 
-      if (this.usuarios.Usuario != null) {
+     if (this.usuarios.Usuario != null) {
         this.usuario = this.usuarios.Usuario;
         this.menuCtrl.enable(true);
         this.rootPage = UltimasPerguntasPage;
@@ -37,6 +37,12 @@ export class MyApp {
         this.rootPage = LoginPage;
         this.menuCtrl.enable(false);
       }
+
+      //Atualiza após login
+      this.usuarios.Auth.onAuthStateChanged(user => {
+        if (user) this.usuario = this.usuarios.Usuario;
+      });
+
 
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

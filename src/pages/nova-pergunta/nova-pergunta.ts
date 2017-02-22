@@ -4,7 +4,7 @@ import { Usuarios } from './../../providers/usuarios';
 import { Discussoes } from './../../providers/discussoes';
 import { Discussao } from './../../models/discussao';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 /**
  * @package Pages

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, NgZone } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
@@ -18,7 +18,7 @@ import { Usuarios } from './../../providers/usuarios';
   selector: 'page-discussao',
   templateUrl: 'discussao.html'
 })
-export class DiscussaoPage {
+export class DiscussaoPage implements OnInit {
 
   @ViewChild('content')
   private content;
@@ -27,34 +27,43 @@ export class DiscussaoPage {
   private texto: string = "";
   private usuario: Usuario;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadCtrl: LoadingController, private msgProvider: Mensagens, private usuarioProvider: Usuarios) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadCtrl: LoadingController, private msgProvider: Mensagens,
+              private usuarioProvider: Usuarios, private ngZone: NgZone) {
     this.discussao = this.navParams.get("discussao") as Discussao;
   }
 
   ionViewDidLoad() {
+  }
+
+  ngOnInit() {
     this.usuario = this.usuarioProvider.Usuario;
 
-    let loading = this.loadCtrl.create({
-      content: "Aguarde"
-    });
-    loading.present();
+    this.loadCtrl.create({
+      content: "Aguarde",
+      duration: 1000
+    }).present();
     
     this.mensagens = new Observable<Mensagem[]>((observer) => {
       let mensagens: Mensagem[] = [];
       this.msgProvider.acompanharDiscussao(this.discussao.id).on('child_added', (snapshot) => {
 
         mensagens.push(Mensagem.parseJSON(snapshot.val()));
-        observer.next(mensagens);
         
-        setTimeout(() => {
-          this.content.scrollToBottom(300);
-        }, 300);
+        //Arruma bug de não exibir o conteúo na tela
+        this.ngZone.run(() => {
+          //Atualiza conteúdo arrumando o bug
+          observer.next(mensagens);
+
+          //Anda após adicionar item
+          setTimeout(() => {
+            if (this.content != null) 
+              this.content.scrollToBottom(300);
+  
+          }, 300);
+        });
+
       });
     });
-
-    loading.dismiss();
-
-
   }
 
   public getLado(mensagem: Mensagem) {
